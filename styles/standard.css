@@ -11,11 +11,18 @@
 html {
     font-size: 16px;
     scroll-behavior: smooth;
+    height: 100%;
 }
 
 body {
-    /* height: 100dvh; */
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 48px;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+    outline: none;
 }

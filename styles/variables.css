@@ -1,13 +1,14 @@
 :root {
     /*Background Colors*/
     --header-footer-headline-color: rgba(231, 108, 31, 1);
-    --meal-card-color: rgba(253, 234, 220, 1);
+    --menu-card-color: rgba(253, 234, 220, 1);
     --basket-background-color: rgba(54, 53, 52, 1);
     --burgerlogo-background-color: rgba(253, 234, 220, 1);
 
 
     /*Buttons Colors*/
     --rating-button-color: rgba(250, 202, 172, 1);
+    --menu-buttons-color: rgba(255, 255, 255, 1);
 
 
 
@@ -15,6 +16,7 @@
     /*Fonts Colors*/
     --global-h1-color: rgba(231, 108, 31, 1);
     --global-h2-color: rgba(54, 53, 52, 1);
+    --global-h4-color: rgba(255, 255, 255, 1);
     --global-p-color: rgba(54, 53, 52, 1);
     --global-p2-color: rgba(114, 109, 109, 1);
 }

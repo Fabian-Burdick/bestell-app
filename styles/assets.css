@@ -1,0 +1,19 @@
+.hero-img {
+    height: 508px;
+    width: 1440px;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+.burgerlogo-img {
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+}
+
+.menu-section img {
+    width: 207px;
+    height: 121px;
+    border-radius: 12px;
+    object-fit: cover;
+}
