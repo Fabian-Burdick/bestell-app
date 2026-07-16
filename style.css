@@ -70,40 +70,44 @@ header div {
 main {
     display: flex;
     flex-direction: column;
-    align-items: center;
     width: 100%;
+    max-width: 1440px;
+    min-height: calc(100dvh - 272px);
+    margin: auto;
     gap: 50px;
+    padding-bottom: 64px;
 }
 
 .headline-section {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    left: calc((100vw - 100%) / -2);
+    right: calc((100vw - 100%) / -2);
+    margin-left: -50vw;
+    margin-right: -50vw;
     height: 60px;
-    width: 100%;
     background-color: var(--header-footer-headline-color);
 }
 
 .food-text {
     display: flex;
     align-items: end;
-    justify-content: center;
+    justify-content: start;
     position: relative;
-    right: 480px;
     bottom: 28px;
+    padding-left: 170px;
     gap: 20px;
-}
-
-.pizza {
-    padding-right: 150px;
-}
-
-.salad {
-    padding-right: 295px;
+    width: 1440px;
 }
 
 .menu-section {
     display: flex;
     flex-direction: column;
+    padding-left: 120px;
     gap: 16px;
-    padding-right: 780px;
+    z-index: 1;
+
 }
 
 .menu-card {
@@ -145,26 +149,29 @@ main {
     height: 30px;
 }
 
+.menu-price button:hover {
+    box-shadow: 2px 4px rgba(0, 0, 0, 0.25);
+}
 
-
-
-
-
-
-
-
+.menu-price button p:hover {
+    transform: scale(1.05);
+    color: var(--global-h1-color);
+}
 
 footer {
-    /* position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0; */
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 72px;
-    padding-top: 32px;
     height: 128px;
     width: 100%;
     background-color: var(--header-footer-headline-color);
+}
+
+footer div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1440px;
+    gap: 72px;
+    padding-top: 32px;
 }

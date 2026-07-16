@@ -5,7 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>bestellapp</title>
-    <link rel="icon" href="./assets/icons/takeout_dining_2-default.png">
+
+    <link rel="icon" href="./assets/icons/favcon.webp">
+
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="./styles/variables.css">
     <link rel="stylesheet" href="./styles/standard.css">
@@ -14,43 +16,41 @@
     <link rel="stylesheet" href="./styles/basket.css">
 </head>
 
-<body onload="">
+<body>
     <header>
         <div>
             <a href="/bestell-app">
-                <img src="./assets/icons/Logo 02.png" alt="bestellapp">
+                <img src="./assets/icons/Logo 02.webp" alt="bestellapp">
             </a>
-            <img src="./assets/icons/dehaze.png" alt="menu">
+            <img src="./assets/icons/dehaze.webp" alt="menu">
         </div>
     </header>
-    <section class="hero-section">
-        <div>
-            <img class="hero-img" src="./assets/img/hero.jpg" alt="hero">
-        </div>
-        <div class="burgerlogo-background">
-            <img class="burgerlogo-img" src="./assets/img/burger-logo.png" alt="burgerlogo">
-        </div>
-        <div class="hero-text-container">
-            <div class="hero-text">
-                <h1>Burger</h1>
-                <h2>House</h2>
+
+    <main>
+        <section class="hero-section">
+            <img class="hero-img" src="./assets/img/hero.webp" alt="hero">
+            <div class="burgerlogo-background">
+                <img class="burgerlogo-img" src="./assets/img/burger-logo.webp" alt="burgerlogo">
             </div>
-            <div class="rate-button">
-                <div>
-                    <p class="rate-button-star">★</p>
-                    <p class="rate-button-text1">4,1</p>
-                    <p class="rate-button-text2">(317)</p>
+            <div class="hero-text-container">
+                <div class="hero-text">
+                    <h1>Burger</h1>
+                    <h2>House</h2>
+                </div>
+                <div class="rate-button">
+                    <div>
+                        <p class="rate-button-star">★</p>
+                        <p class="rate-button-text1">4,1</p>
+                        <p class="rate-button-text2">(317)</p>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div>
             <h3>The best of Burgers, Pizza, and Greens, all in one great place.</h3>
-        </div>
-    </section>
-    <main>
+        </section>
+
         <section class="headline-section">
             <div class="food-text">
-                <img src="./assets/icons/Chanese 1.png" alt="Burger">
+                <img src="./assets/icons/Chanese 1.webp" alt="Burger">
                 <h4>Burger & Sandwiches</h4>
             </div>
         </section>
@@ -58,8 +58,8 @@
         </section>
 
         <section class="headline-section">
-            <div class="food-text pizza">
-                <img src="./assets/icons/Pizza 1.png" alt="Pizza">
+            <div class="food-text">
+                <img src="./assets/icons/Pizza 1.webp" alt="Pizza">
                 <h4>Pizza</h4>
                 <h5>(30cm)</h5>
             </div>
@@ -68,18 +68,33 @@
         </section>
 
         <section class="headline-section">
-            <div class="food-text salad">
-                <img src="./assets/icons/Salad 1.png" alt="Salad">
+            <div class="food-text">
+                <img src="./assets/icons/Salad 1.webp" alt="Salad">
                 <h4>Salad</h4>
             </div>
         </section>
         <section class="menu-section" id="salad-content">
         </section>
+
+        <div class="basket-wrapper">
+            <div class="basket">
+                <div class="basket-content">
+                    <h4>Your Basket</h4>
+                    <p>Nothing here yet.<br>
+                        Go ahead and choose something delicious!</p>
+                    <img src="./assets/icons/basket.webp" alt="Basket">
+                </div>
+            </div>
+        </div>
+
     </main>
+
     <footer>
-        <p>© 2025 BurgerHouse</p>
-        <p>imprint</p>
-        <p>Cookie Preferences</p>
+        <div>
+            <p>© 2025 BurgerHouse</p>
+            <p>imprint</p>
+            <p>Cookie Preferences</p>
+        </div>
     </footer>
 </body>
 

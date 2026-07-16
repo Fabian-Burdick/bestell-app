@@ -1,7 +1,7 @@
 const burgerMenu = document.getElementById("burger-content");
 burgerMenu.innerHTML = `<div class="menu-card">
                 <div>
-                    <img src="./assets/img/veggie-burger.jpg" alt="veggie-burger">
+                    <img src="./assets/img/veggie-burger.webp" alt="veggie-burger">
                 </div>
                 <div class="menu-info">
                     <div class="menu-text">
@@ -10,15 +10,15 @@ burgerMenu.innerHTML = `<div class="menu-card">
                     </div>
                     <div class="menu-price">
                         <h6>16,90€</h6>
-                        <button>
-                            <p>Add to basket </p>
+                        <button onclick="menuButtons()">
+                            <p id="menuButton">Add to basket </p>
                         </button>
                     </div>
                 </div>
             </div>
             <div class="menu-card">
                 <div>
-                    <img src="./assets/img/meat-burger.jpg" alt="meat-burger">
+                    <img src="./assets/img/meat-burger.webp" alt="meat-burger">
                 </div>
                 <div class="menu-info">
                     <div class="menu-text">
@@ -35,7 +35,7 @@ burgerMenu.innerHTML = `<div class="menu-card">
             </div>
             <div class="menu-card">
                 <div>
-                    <img src="./assets/img/beef-burger.jpg" alt="beef-burger">
+                    <img src="./assets/img/beef-burger.webp" alt="beef-burger">
                 </div>
                 <div class="menu-info">
                     <div class="menu-text">
@@ -52,7 +52,7 @@ burgerMenu.innerHTML = `<div class="menu-card">
             </div>
             <div class="menu-card">
                 <div>
-                    <img src="./assets/img/chicken-burger.jpg" alt="chicken-burger">
+                    <img src="./assets/img/chicken-burger.webp" alt="chicken-burger">
                 </div>
                 <div class="menu-info">
                     <div class="menu-text">
@@ -71,7 +71,7 @@ burgerMenu.innerHTML = `<div class="menu-card">
 const pizzaMenu = document.getElementById("pizza-content");
 pizzaMenu.innerHTML = `<div class="menu-card">
                 <div>
-                    <img src="./assets/img/pizza-margherita.jpg" alt="pizza-margherita">
+                    <img src="./assets/img/pizza-margherita.webp" alt="pizza-margherita">
                 </div>
                 <div class="menu-info">
                     <div class="menu-text">
@@ -88,7 +88,7 @@ pizzaMenu.innerHTML = `<div class="menu-card">
             </div>
             <div class="menu-card">
                 <div>
-                    <img src="./assets/img/pizza-chorizo.jpg" alt="pizza-chorizo">
+                    <img src="./assets/img/pizza-chorizo.webp" alt="pizza-chorizo">
                 </div>
                 <div class="menu-info">
                     <div class="menu-text">
@@ -105,7 +105,7 @@ pizzaMenu.innerHTML = `<div class="menu-card">
             </div>
             <div class="menu-card">
                 <div>
-                    <img src="./assets/img/pizza-funghi.jpg" alt="pizza-funghi">
+                    <img src="./assets/img/pizza-funghi.webp" alt="pizza-funghi">
                 </div>
                 <div class="menu-info">
                     <div class="menu-text">
@@ -122,7 +122,7 @@ pizzaMenu.innerHTML = `<div class="menu-card">
             </div>
             <div class="menu-card">
                 <div>
-                    <img src="./assets/img/pizza-chicken.jpg" alt="pizza-chicken">
+                    <img src="./assets/img/pizza-chicken.webp" alt="pizza-chicken">
                 </div>
                 <div class="menu-info">
                     <div class="menu-text">
@@ -141,7 +141,7 @@ pizzaMenu.innerHTML = `<div class="menu-card">
 const saladMenu = document.getElementById("salad-content");
 saladMenu.innerHTML = `            <div class="menu-card">
                 <div>
-                    <img src="./assets/img/beef-salad.jpg" alt="beef-salad">
+                    <img src="./assets/img/beef-salad.webp" alt="beef-salad">
                 </div>
                 <div class="menu-info">
                     <div class="menu-text">
@@ -159,7 +159,7 @@ saladMenu.innerHTML = `            <div class="menu-card">
             </div>
             <div class="menu-card">
                 <div>
-                    <img src="./assets/img/green-salad.jpg" alt="green-salad">
+                    <img src="./assets/img/green-salad.webp" alt="green-salad">
                 </div>
                 <div class="menu-info">
                     <div class="menu-text">
@@ -176,7 +176,7 @@ saladMenu.innerHTML = `            <div class="menu-card">
             </div>
             <div class="menu-card">
                 <div>
-                    <img src="./assets/img/seafood-salad.jpg" alt="seafood-salad">
+                    <img src="./assets/img/seafood-salad.webp" alt="seafood-salad">
                 </div>
                 <div class="menu-info">
                     <div class="menu-text">
@@ -194,7 +194,7 @@ saladMenu.innerHTML = `            <div class="menu-card">
             </div>
             <div class="menu-card">
                 <div>
-                    <img src="./assets/img/vegan-salad.jpg" alt="vegan-salad">
+                    <img src="./assets/img/vegan-salad.webp" alt="vegan-salad">
                 </div>
                 <div class="menu-info">
                     <div class="menu-text">
@@ -210,3 +210,16 @@ saladMenu.innerHTML = `            <div class="menu-card">
                     </div>
                 </div>
             </div>`;
+
+
+function menuButtons() {
+    var x = document.getElementById("menuButton");
+    if (x.innerHTML === "Add to basket") {
+        (x.innerHTML = "Added 1");
+
+    } else {
+        x.innerHTML = "Added 1";
+        x.style.color = "var(--global-h1-color)";
+    }
+}
+
