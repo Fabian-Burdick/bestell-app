@@ -1,9 +1,9 @@
 .basket-wrapper {
     width: 1440px;
-    height: 2314px;
+    height: 2100px;
     flex-grow: 1;
     bottom: 0;
-    top: 906px;
+    top: 905px;
     position: absolute;
     display: flex;
     justify-content: end;

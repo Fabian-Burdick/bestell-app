@@ -1,109 +1,116 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>bestellapp</title>
 
-    <link rel="icon" href="./assets/icons/favcon.webp">
+    <link rel="icon" href="./assets/icons/favcon.webp" />
 
-    <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="./styles/variables.css">
-    <link rel="stylesheet" href="./styles/standard.css">
-    <link rel="stylesheet" href="./styles/assets.css">
-    <link rel="stylesheet" href="./styles/fonts.css">
-    <link rel="stylesheet" href="./styles/basket.css">
-</head>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./styles/variables.css" />
+    <link rel="stylesheet" href="./styles/standard.css" />
+    <link rel="stylesheet" href="./styles/assets.css" />
+    <link rel="stylesheet" href="./styles/fonts.css" />
+    <link rel="stylesheet" href="./styles/menu.css" />
+    <link rel="stylesheet" href="./styles/basket.css" />
+  </head>
 
-<body>
+  <body onload="init()">
     <header id="bestellapp">
-        <nav>
-            <a href="/bestell-app">
-                <img src="./assets/icons/Logo 02.webp" alt="bestellapp">
-            </a>
-            <a href="#imprint">
-                <img src="./assets/icons/dehaze.webp" alt="menu">
-            </a>
-        </nav>
+      <nav>
+        <a href="/bestell-app">
+          <img src="./assets/icons/Logo 02.webp" alt="bestellapp" />
+        </a>
+        <a href="#imprint">
+          <img src="./assets/icons/dehaze.webp" alt="menu" />
+        </a>
+      </nav>
     </header>
 
     <main>
-        <section class="hero-section">
-            <img class="hero-img" src="./assets/img/hero.webp" alt="hero">
-            <div class="burgerlogo-background">
-                <img class="burgerlogo-img" src="./assets/img/burger-logo.webp" alt="burgerlogo">
+      <section class="hero-section">
+        <img class="hero-img" src="./assets/img/hero.webp" alt="hero" />
+        <div class="burgerlogo-background">
+          <img class="burgerlogo-img" src="./assets/img/burger-logo.webp" alt="burgerlogo" />
+        </div>
+        <div class="hero-text-container">
+          <div class="hero-text">
+            <h1>Burger</h1>
+            <h2>House</h2>
+          </div>
+          <div class="rate-button">
+            <div>
+              <p class="rate-button-star">★</p>
+              <p class="rate-button-text1">4,1</p>
+              <p class="rate-button-text2">(317)</p>
             </div>
-            <div class="hero-text-container">
-                <div class="hero-text">
-                    <h1>Burger</h1>
-                    <h2>House</h2>
-                </div>
-                <div class="rate-button">
-                    <div>
-                        <p class="rate-button-star">★</p>
-                        <p class="rate-button-text1">4,1</p>
-                        <p class="rate-button-text2">(317)</p>
-                    </div>
-                </div>
-            </div>
-            <h3>The best of Burgers, Pizza, and Greens, all in one great place.</h3>
-        </section>
+          </div>
+        </div>
+        <h3>The best of Burgers, Pizza, and Greens, all in one great place.</h3>
+      </section>
 
-        <section class="headline-section">
+      <section class="menu-section">
+        <div id="categorySection" class="menu-category">
+          <div class="menu-headline">
             <div class="food-text">
-                <img src="./assets/icons/Chanese 1.webp" alt="Burger">
-                <h4>Burger & Sandwiches</h4>
+              <img src="./assets/icons/Chanese 1.webp" alt="Burger" />
+              <h4>Burger & Sandwiches</h4>
             </div>
-        </section>
-        <section class="menu-section" id="burger-content">
-        </section>
-
-        <section class="headline-section">
+          </div>
+          <div class="menu-dishes" id="burgerContainer">
+            <!--burgers rendered here-->
+          </div>
+        </div>
+        <div class="menu-category">
+          <div class="menu-headline">
             <div class="food-text">
-                <img src="./assets/icons/Pizza 1.webp" alt="Pizza">
-                <h4>Pizza</h4>
-                <h5>(30cm)</h5>
+              <img src="./assets/icons/Pizza 1.webp" alt="Pizza" />
+              <h4>Pizza</h4>
+              <h5>(30cm)</h5>
             </div>
-        </section>
-        <section class="menu-section" id="pizza-content">
-        </section>
-
-        <section class="headline-section">
+          </div>
+          <div class="menu-dishes" id="pizzaContainer">
+            <!--Pizza rendered here-->
+          </div>
+        </div>
+        <div class="menu-category">
+          <div class="menu-headline">
             <div class="food-text">
-                <img src="./assets/icons/Salad 1.webp" alt="Salad">
-                <h4>Salad</h4>
+              <img src="./assets/icons/Salad 1.webp" alt="Salad" />
+              <h4>Salad</h4>
             </div>
-        </section>
-        <section class="menu-section" id="salad-content">
-        </section>
-
-        <div class="basket-wrapper">
-            <div class="basket">
-                <div class="basket-content">
-                    <h4>Your Basket</h4>
-                    <p>Nothing here yet.<br>
-                        Go ahead and choose something delicious!</p>
-                    <img src="./assets/icons/basket.webp" alt="Basket">
-                </div>
-            </div>
+          </div>
+          <div class="menu-dishes" id="saladContainer">
+            <!--Salad rendered here-->
+          </div>
         </div>
 
+        <div class="basket-wrapper">
+          <div class="basket">
+            <div class="basket-content">
+              <h4>Your Basket</h4>
+              <p>
+                Nothing here yet.<br />
+                Go ahead and choose something delicious!
+              </p>
+              <img src="./assets/icons/basket.webp" alt="Basket" />
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer>
-        <nav>
-            <a href="#bestellapp">© 2025 BurgerHouse</a>
-            <p id="imprint">imprint</p>
-            <p>Cookie Preferences</p>
-        </nav>
+      <nav>
+        <a href="#bestellapp">© 2025 BurgerHouse</a>
+        <p id="imprint">imprint</p>
+        <p>Cookie Preferences</p>
+      </nav>
     </footer>
-</body>
+  </body>
 
-
-
-<script src="./scripts/db.js"></script>
-<script src="./script.js"></script>
-<script src="./scripts/tamplate.js"></script>
-
+  <script src="./scripts/db.js"></script>
+  <script src="./script.js"></script>
+  <script src="./scripts/tamplate.js"></script>
 </html>
