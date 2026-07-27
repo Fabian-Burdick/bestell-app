@@ -1,32 +1,87 @@
 .basket-wrapper {
-    width: 1440px;
-    height: 2100px;
-    flex-grow: 1;
-    bottom: 0;
-    top: 905px;
-    position: absolute;
-    display: flex;
-    justify-content: end;
+  width: 1440px;
+  height: 2100px;
+  flex-grow: 1;
+  bottom: 0;
+  top: 905px;
+  position: absolute;
+  display: flex;
+  justify-content: end;
 }
 
 .basket {
-    width: 435px;
-    height: 794px;
-    border-radius: 30px 0 0 30px;
-    background-color: var(--basket-background-color);
-    position: sticky;
-    top: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 59px 0px 0px 31px;
-    gap: 36px;
+  width: 435px;
+  height: 794px;
+  border-radius: 30px 0 0 30px;
+  background-color: var(--basket-background-color);
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 59px 0px 0px 31px;
+  gap: 36px;
 }
 
 .basket-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 387px;
-    gap: 36px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 340px;
+  gap: 36px;
+}
+
+.basket-menucard {
+  max-width: 340px;
+  width: 100%;
+  height: 128px;
+  background-color: var(--menu-card-color);
+  border-radius: 20px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.basket-menucard-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.basket-menucard-text {
+  display: flex;
+}
+
+.total-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  height: 80px;
+}
+
+.total-price {
+  display: flex;
+  justify-content: space-between;
+}
+
+.underline {
+  border-bottom: 3px solid var(--global-h4-color);
+}
+
+.total {
+  display: flex;
+  justify-content: space-between;
+}
+
+.basket button {
+  background-color: var(--buy-button-color);
+  font-family: 'Palanquin', latin;
+  font-weight: 600;
+  font-size: 2rem;
+  line-height: 120%;
+  color: var(--global-h4-color);
+  width: 320px;
+  height: 64px;
+  border-radius: 60px;
 }
