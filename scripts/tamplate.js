@@ -10,7 +10,7 @@ function dishesTemplate(dishes) {
                             </div>
                             <div class="menu-price">
                                 <h6>${dishes.price.toFixed(2).replace('.', ',')} €</h6>
-                                <button onclick="pushDishesToBasket()">
+                                <button onclick="pushDishesToBasket(${JSON.stringify(myDishes)})">
                                     Add to basket 
                                 </button>
                             </div>
@@ -18,8 +18,8 @@ function dishesTemplate(dishes) {
                     </div>`;
 }
 
-function BasketDishesTemplate() {
-  return `<div class="basket">
+function BasketDishesTemplate(dishes) {
+  return `<div id="basketDishes" class="basket">
       <div class="basket-content">
         <h4>Your Basket</h4>
         <div class="basket-menucard">
