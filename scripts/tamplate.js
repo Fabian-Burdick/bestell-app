@@ -1,47 +1,48 @@
-function dishesTemplate(dishes) {
-  return `<div class="menu-card">
-                        <div>
-                            <img src="${dishes.image}">
-                        </div>
-                        <div class="menu-info">
-                            <div class="menu-text">
-                                <h6>${dishes.name}</h6>
-                                <p>${dishes.description}</p>
-                            </div>
-                            <div class="menu-price">
-                                <h6>${dishes.price.toFixed(2).replace('.', ',')} €</h6>
-                                <button onclick="pushDishesToBasket(${JSON.stringify(myDishes)})">
-                                    Add to basket 
-                                </button>
-                            </div>
-                        </div>
-                    </div>`;
+function dishesTemplate(dishes, index) {
+  return `
+    <div class="menu-card"> 
+      <div> 
+        <img src="${dishes.image}" alt="${dishes.name}"> 
+      </div> 
+      <div class="menu-info"> 
+        <div class="menu-text"> 
+          <h6>${dishes.name}</h6> 
+          <p>${dishes.description}</p> 
+        </div> 
+        <div class="menu-price"> 
+          <h6>${dishes.price.toFixed(2).replace('.', ',')} €</h6> 
+          <button onclick="pushDishesToBasket(${index})"> 
+            Add to basket 
+          </button> 
+        </div> 
+      </div> 
+    </div>`;
 }
 
-function BasketDishesTemplate(dishes) {
-  return `<div id="basketDishes" class="basket">
+function basketDishesTemplate(dish, index) {
+  return `<div class="basket">
       <div class="basket-content">
         <h4>Your Basket</h4>
         <div class="basket-menucard">
           <div>
-            <p>${dishes.name}</p>
+            <p>${dish.name}</p>
           </div>
           <div class="basket-menucard-container">
             <div class="basket-menucard-text">
               <img src="./assets/icons/bin.webp" alt="bin" />
               <p>1+</p>
             </div>
-            <p>${dishes.price.toFixed(2).replace('.', ',')} €</p>
+            <p>${dish.price.toFixed(2).replace('.', ',')} €</p>
           </div>
         </div>
         <div class="total-content">
           <div class="total-price">
             <p>Subtotal</p>
-            <p>Price</p>
+            <p>${dish.price.toFixed(2).replace('.', ',')}</p>
           </div>
           <div class="total-price">
             <p>Dilivery fee</p>
-            <p>Price</p>
+            <p>5,90€</p>
           </div>
           <div class="underline"></div>
           <div class="total">

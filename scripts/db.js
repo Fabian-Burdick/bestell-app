@@ -1,4 +1,4 @@
-let basketDishes = [];
+let basket = [];
 let myDishes = [
   {
     category: 'burger',
