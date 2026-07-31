@@ -7,7 +7,6 @@ function allDishes() {
   renderDishes('pizzaContainer', 'pizza');
   renderDishes('saladContainer', 'salad');
   renderBasketDishes();
-  renderEmptyBasket();
 }
 
 function renderDishes(containerId, category) {
@@ -27,23 +26,21 @@ function pushDishesToBasket(index) {
   renderBasketDishes();
 }
 
-function renderEmptyBasket() {
-  const basketContainer = document.getElementById('basketId');
-  if (basketContainer) {
-    basketContainer.innerHTML = emptyBasketTemplate();
-  }
-}
-
 function renderBasketDishes() {
   const basketContainer = document.getElementById('basketDishes');
   if (!basketContainer) return;
   basketContainer.innerHTML = '';
   if (basket.length === 0) {
+    basketContainer.innerHTML = emptyBasketTemplate();
     return;
   }
   for (let i = 0; i < basket.length; i++) {
     basketContainer.innerHTML += basketDishesTemplate(basket[i], i);
   }
 
-  renderBasketTotal();
+  for (let i = 0; i < basket.length; i++) {
+    let totalHTML = '';
+    basketContainer.innerHTML += basketTotalTemplate(basket[i], i);
+  }
+  basketContainer.innerHTML = totalHTML;
 }

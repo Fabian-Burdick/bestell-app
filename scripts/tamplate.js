@@ -20,9 +20,7 @@ function dishesTemplate(dishes, index) {
 }
 
 function basketDishesTemplate(dish, index) {
-  return `<div class="basket">
-      <div class="basket-content">
-        <h4>Your Basket</h4>
+  return `
         <div class="basket-menucard">
           <div>
             <p>${dish.name}</p>
@@ -35,7 +33,14 @@ function basketDishesTemplate(dish, index) {
             <p>${dish.price.toFixed(2).replace('.', ',')} €</p>
           </div>
         </div>
-        <div class="total-content">
+
+
+
+`;
+}
+
+function basketTotalTemplate(dish, index) {
+  return `<div class="total-content">
           <div class="total-price">
             <p>Subtotal</p>
             <p>${dish.price.toFixed(2).replace('.', ',')}</p>
@@ -52,20 +57,14 @@ function basketDishesTemplate(dish, index) {
           <div>
             <button>Buy</button>
           </div>
-        </div>
-      </div>
-    </div>`;
+        </div>`;
 }
 
 function emptyBasketTemplate() {
-  return `<div class="basket">
-            <div class="basket-content">
-              <h4>Your Basket</h4>
-              <p>
+  return `    <p>
                 Nothing here yet.<br />
                 Go ahead and choose something delicious!
               </p>
               <img src="./assets/icons/basket.webp" alt="Basket" />
-            </div>
-        </div>`;
+`;
 }
