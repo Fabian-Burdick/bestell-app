@@ -1,26 +1,46 @@
 :root {
-    interpolate-size: allow-keywords;
+  interpolate-size: allow-keywords;
 }
 
 * {
-    margin: 0;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
 }
-
 
 html,
 body {
-    overflow-x: clip;
+  overflow-x: clip;
 }
 
 button {
-    background-color: transparent;
-    border: none;
-    outline: none;
-    cursor: pointer;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
 }
 
 .d-none {
-    display: none;
+  display: none;
+}
+
+/* Width of the scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+/* Background of the track */
+::-webkit-scrollbar-track {
+  background: white;
+}
+
+/* The draggable handle */
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-main-color);
+  border-radius: 5px;
+}
+
+/* Handle color on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }

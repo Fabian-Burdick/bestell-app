@@ -22,9 +22,7 @@ function dishesTemplate(dishes, index) {
 function basketDishesTemplate(dish, index) {
   return `
         <div class="basket-menucard">
-          <div>
-            <p>${dish.name}</p>
-          </div>
+            <p>1 x ${dish.name}</p>
           <div class="basket-menucard-container">
             <div class="basket-menucard-text">
               <img src="./assets/icons/bin.webp" alt="bin" />
@@ -32,39 +30,40 @@ function basketDishesTemplate(dish, index) {
             </div>
             <p>${dish.price.toFixed(2).replace('.', ',')} €</p>
           </div>
-        </div>
-
-
-
-`;
-}
-
-function basketTotalTemplate(dish, index) {
-  return `<div class="total-content">
-          <div class="total-price">
-            <p>Subtotal</p>
-            <p>${dish.price.toFixed(2).replace('.', ',')}</p>
-          </div>
-          <div class="total-price">
-            <p>Dilivery fee</p>
-            <p>5,90€</p>
-          </div>
-          <div class="underline"></div>
-          <div class="total">
-            <p>Total</p>
-            <p>Price</p>
-          </div>
-          <div>
-            <button>Buy</button>
-          </div>
         </div>`;
 }
 
+function basketTotalTemplate(subtotal, total) {
+  return `
+          <div class="total-content">
+            <div class="price-list">
+               <div class="total-price">
+                <p>Subtotal</p>
+                <p>${subtotal.toFixed(2).replace('.', ',')} €</p>
+              </div>
+              <div class="total-price">
+                <p>Delivery fee</p>
+                <p>5,90 €</p>
+              </div>
+              <div class="underline">
+              </div>
+              <div class="total">
+                <p>Total</p>
+                <p>${total.toFixed(2).replace('.', ',')} €</p>
+              </div>
+            </div>
+              <div>
+                <button>Buy now (${total.toFixed(2).replace('.', ',')}€)</button>
+              </div>
+          </div>`;
+}
+
 function emptyBasketTemplate() {
-  return `    <p>
-                Nothing here yet.<br />
-                Go ahead and choose something delicious!
-              </p>
+  return `<div class="empty-basket-content">
+            <p>
+              Nothing here yet.<br />
+              Go ahead and choose something delicious!
+            </p>
               <img src="./assets/icons/basket.webp" alt="Basket" />
-`;
+          </div>`;
 }

@@ -1,9 +1,8 @@
 .basket-wrapper {
   width: 1440px;
   height: 2100px;
-  flex-grow: 1;
   bottom: 0;
-  top: 905px;
+  top: 904px;
   position: absolute;
   display: flex;
   justify-content: end;
@@ -19,25 +18,46 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 59px 0px 0px 31px;
+  padding: 59px 0px 0px 0px;
   gap: 36px;
+  z-index: 1;
 }
 
-.basket-content {
+.basket-dishes {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 340px;
-  gap: 36px;
+  gap: 10px;
+  max-height: 400px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.basket-dishes::-webkit-scrollbar {
+  left: 20px;
+  width: 6px;
+  height: 5px;
+}
+.basket-dishes::-webkit-scrollbar-track {
+  background: var(--basket-background-color);
+  border-radius: 30px;
+}
+.basket-dishes::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-basket-color);
+}
+
+.basket-dishes::-webkit-scrollbar-thumb:hover {
+  background: var(--buy-button-color);
 }
 
 .basket-menucard {
   max-width: 340px;
   width: 100%;
-  height: 128px;
   background-color: var(--menu-card-color);
   border-radius: 20px;
-  padding: 10px;
+  padding: 20px;
+  gap: 8px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -52,12 +72,27 @@
   display: flex;
 }
 
-.total-content {
-  width: 100%;
+.basket-total {
+  width: 340px;
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
   height: 80px;
+}
+
+.total-content {
+  display: flex;
+  flex-direction: column;
+  gap: 31px;
+}
+
+.price-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
 }
 
 .total-price {
@@ -84,4 +119,18 @@
   width: 320px;
   height: 64px;
   border-radius: 60px;
+}
+
+.empty-basket-content {
+  display: flex;
+  align-items: center;
+
+  flex-direction: column;
+
+  gap: 100px;
+}
+
+.empty-basket-content img {
+  width: 128px;
+  height: 129px;
 }

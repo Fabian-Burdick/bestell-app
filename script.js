@@ -7,6 +7,7 @@ function allDishes() {
   renderDishes('pizzaContainer', 'pizza');
   renderDishes('saladContainer', 'salad');
   renderBasketDishes();
+  renderBasketTotal();
 }
 
 function renderDishes(containerId, category) {
@@ -23,24 +24,44 @@ function renderDishes(containerId, category) {
 function pushDishesToBasket(index) {
   const chosenDish = myDishes[index];
   basket.push(chosenDish);
+
   renderBasketDishes();
+  renderBasketTotal();
 }
 
 function renderBasketDishes() {
   const basketContainer = document.getElementById('basketDishes');
   if (!basketContainer) return;
+
   basketContainer.innerHTML = '';
+
   if (basket.length === 0) {
     basketContainer.innerHTML = emptyBasketTemplate();
     return;
   }
+
+  let dishContent = '';
   for (let i = 0; i < basket.length; i++) {
-    basketContainer.innerHTML += basketDishesTemplate(basket[i], i);
+    dishContent += basketDishesTemplate(basket[i], i);
   }
 
-  for (let i = 0; i < basket.length; i++) {
-    let totalHTML = '';
-    basketContainer.innerHTML += basketTotalTemplate(basket[i], i);
+  basketContainer.innerHTML = dishContent;
+}
+
+function renderBasketTotal() {
+  const totalContainer = document.getElementById('basketTotal');
+  if (!totalContainer) return;
+
+  if (basket.length === 0) {
+    totalContainer.innerHTML = '';
+    return;
   }
-  basketContainer.innerHTML = totalHTML;
+
+  let subtotal = 0;
+  for (let i = 0; i < basket.length; i++) {
+    subtotal += basket[i].price;
+  }
+
+  const total = subtotal + 5.9;
+  totalContainer.innerHTML = basketTotalTemplate(subtotal, total);
 }

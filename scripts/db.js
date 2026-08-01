@@ -2,7 +2,7 @@ let basket = [];
 let myDishes = [
   {
     category: 'burger',
-    name: 'Veggie black burger',
+    name: 'Veggie mushroom black burger',
     description: 'Mixed green salad, Tomatoes, Edamame, Mushrooms',
     price: 16.9,
     image: './assets/img/veggie-burger.webp',
