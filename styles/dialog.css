@@ -1,0 +1,19 @@
+dialog {
+  border: none;
+}
+
+.order-dialog {
+  width: 415px;
+  height: 269px;
+  border-radius: 30px;
+  position: relative;
+  left: 38%;
+  top: 802px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--dialog-background-color);
+  scrollbar-width: none;
+  padding: 26px;
+}

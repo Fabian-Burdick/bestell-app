@@ -4,8 +4,7 @@
   --menu-card-color: rgba(253, 234, 220, 1);
   --basket-background-color: rgba(54, 53, 52, 1);
   --burgerlogo-background-color: rgba(253, 234, 220, 1);
-  --scrollbar-main-color: rgba(231, 108, 31, 1);
-  --scrollbar-basket-color: #e7c3ad;
+  --dialog-background-color: rgba(54, 53, 52, 1);
 
   /*Buttons Colors*/
   --rating-button-color: rgba(250, 202, 172, 1);
@@ -18,4 +17,8 @@
   --global-h4-color: rgba(255, 255, 255, 1);
   --global-p-color: rgba(54, 53, 52, 1);
   --global-p2-color: rgba(114, 109, 109, 1);
+
+  /*Scroll Bar Colors*/
+  --scrollbar-main-color: rgba(231, 108, 31, 1);
+  --scrollbar-basket-color: #e7c3ad;
 }

@@ -21,86 +21,84 @@ function renderDishes(containerId, category) {
   }
 }
 
-function pushDishesToBasket(index, buttonElement) {
+function renderMenuButtons() {
+  const buttons = document.querySelectorAll('.menuButton');
+  buttons.forEach((button, index) => {
+    const basketDish = basket.find((dish) => dish.name === myDishes[index].name);
+    if (basketDish) {
+      button.innerHTML = `Added ${basketDish.amount}`;
+      button.style.color = 'var(--global-h1-color)';
+    } else {
+      button.innerHTML = 'Add to basket';
+      button.style.color = '';
+    }
+  });
+}
+
+function pushDishesToBasket(index) {
   const chosenDish = myDishes[index];
-  basket.push(chosenDish);
+
+  const existingDish = basket.find((dish) => dish.name === chosenDish.name);
+
+  if (existingDish) {
+    existingDish.amount++;
+  } else {
+    basket.push({
+      ...chosenDish,
+      amount: 1,
+    });
+  }
 
   renderBasketDishes();
   renderBasketTotal();
-
-  let counter = parseInt(buttonElement.getAttribute('data-count')) || 0;
-  counter++;
-
-  buttonElement.setAttribute('data-count', counter);
-  buttonElement.innerHTML = `Added ${counter}`;
-  buttonElement.style.color = 'var(--global-h1-color)';
-
-  if (counter > 1) {
-    buttonElement.style.color = 'var(--global-h1-color)';
-  }
+  renderMenuButtons();
 }
 
 function renderBasketDishes() {
   const basketContainer = document.getElementById('basketDishes');
   if (!basketContainer) return;
-
   basketContainer.innerHTML = '';
-
   if (basket.length === 0) {
     basketContainer.innerHTML = emptyBasketTemplate();
     return;
   }
-
   let dishContent = '';
   for (let i = 0; i < basket.length; i++) {
     dishContent += basketDishesTemplate(basket[i], i);
   }
-
   basketContainer.innerHTML = dishContent;
 }
 
 function renderBasketTotal() {
   const totalContainer = document.getElementById('basketTotal');
   if (!totalContainer) return;
-
   if (basket.length === 0) {
     totalContainer.innerHTML = '';
     return;
   }
-
   let subtotal = 0;
   for (let i = 0; i < basket.length; i++) {
-    subtotal += basket[i].price;
+    subtotal += basket[i].price * basket[i].amount;
   }
-
-  const total = subtotal + 5.9;
+  const delivery = 5.9;
+  const total = subtotal + delivery;
   totalContainer.innerHTML = basketTotalTemplate(subtotal, total);
 }
 
-window.basket = basket;
-
-window.deleteDishes = function (i) {
-  if (window.basket) {
-    window.basket.splice(i, 1);
-    renderBasketDishes();
-    renderBasketTotal();
-  }
-};
-
-window.plusDish = function (i) {
-  basket[i].amount = (basket[i].amount || 1) + 1;
-
-  renderBasketDishes();
-  renderBasketTotal();
-};
-
-window.minusDish = function (i) {
+function minusDish(i) {
   if (basket[i].amount > 1) {
     basket[i].amount--;
   } else {
     basket.splice(i, 1);
   }
-
   renderBasketDishes();
   renderBasketTotal();
-};
+  renderMenuButtons();
+}
+
+function deleteDishes(i) {
+  basket.splice(i, 1);
+  renderBasketDishes();
+  renderBasketTotal();
+  renderMenuButtons();
+}
