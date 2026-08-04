@@ -21,12 +21,23 @@ function renderDishes(containerId, category) {
   }
 }
 
-function pushDishesToBasket(index) {
+function pushDishesToBasket(index, buttonElement) {
   const chosenDish = myDishes[index];
   basket.push(chosenDish);
 
   renderBasketDishes();
   renderBasketTotal();
+
+  let counter = parseInt(buttonElement.getAttribute('data-count')) || 0;
+  counter++;
+
+  buttonElement.setAttribute('data-count', counter);
+  buttonElement.innerHTML = `Added ${counter}`;
+  buttonElement.style.color = 'var(--global-h1-color)';
+
+  if (counter > 1) {
+    buttonElement.style.color = 'var(--global-h1-color)';
+  }
 }
 
 function renderBasketDishes() {
@@ -65,3 +76,31 @@ function renderBasketTotal() {
   const total = subtotal + 5.9;
   totalContainer.innerHTML = basketTotalTemplate(subtotal, total);
 }
+
+window.basket = basket;
+
+window.deleteDishes = function (i) {
+  if (window.basket) {
+    window.basket.splice(i, 1);
+    renderBasketDishes();
+    renderBasketTotal();
+  }
+};
+
+window.plusDish = function (i) {
+  basket[i].amount = (basket[i].amount || 1) + 1;
+
+  renderBasketDishes();
+  renderBasketTotal();
+};
+
+window.minusDish = function (i) {
+  if (basket[i].amount > 1) {
+    basket[i].amount--;
+  } else {
+    basket.splice(i, 1);
+  }
+
+  renderBasketDishes();
+  renderBasketTotal();
+};

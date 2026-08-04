@@ -11,7 +11,7 @@ function dishesTemplate(dishes, index) {
         </div> 
         <div class="menu-price"> 
           <h6>${dishes.price.toFixed(2).replace('.', ',')} €</h6> 
-          <button onclick="pushDishesToBasket(${index})"> 
+          <button class="menuButton" onclick="pushDishesToBasket(${index}, this )" > 
             Add to basket 
           </button> 
         </div> 
@@ -19,16 +19,21 @@ function dishesTemplate(dishes, index) {
     </div>`;
 }
 
-function basketDishesTemplate(dish, index) {
+function basketDishesTemplate(dish, i) {
+  const counter = dish.amount || 1;
+  const totalItemPrice = (dish.price * counter).toFixed(2).replace('.', ',');
+
   return `
         <div class="basket-menucard">
-            <p>1 x ${dish.name}</p>
+            <p>${counter} x ${dish.name}</p>
           <div class="basket-menucard-container">
             <div class="basket-menucard-text">
-              <img src="./assets/icons/bin.webp" alt="bin" />
-              <p>1+</p>
+              <button onclick="minusDish(${i})">
+                <img src="./assets/icons/bin.webp" alt="bin" />
+              </button>
+              <button onclick="plusDish(${i})">+</button>
             </div>
-            <p>${dish.price.toFixed(2).replace('.', ',')} €</p>
+            <p>${totalItemPrice} €</p>
           </div>
         </div>`;
 }
@@ -53,7 +58,7 @@ function basketTotalTemplate(subtotal, total) {
               </div>
             </div>
               <div>
-                <button>Buy now (${total.toFixed(2).replace('.', ',')}€)</button>
+                <button class="buy-button">Buy now (${total.toFixed(2).replace('.', ',')}€)</button>
               </div>
           </div>`;
 }
