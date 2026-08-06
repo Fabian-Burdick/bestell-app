@@ -2,10 +2,12 @@ const dialog = document.getElementById('myDialog');
 
 function openDialog() {
   dialog.showModal();
-  dialog.classList.add('opened');
+  document.getElementById('closeOpenBasket').style.display = 'none';
+
+  basket = [];
+  renderMenuButtons();
 }
 
 function closeDialog() {
   dialog.close();
-  dialog.classList.remove('opened');
 }

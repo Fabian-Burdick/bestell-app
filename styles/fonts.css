@@ -194,3 +194,19 @@ p {
   text-decoration: none;
   color: var(--global-h4-color);
 }
+
+.order-dialog h1 {
+  font-family: 'Palanquin', latin;
+  font-weight: 700;
+  font-size: 42px;
+  line-height: 120%;
+  color: var(--order-dialog-h1-p-color);
+}
+
+.order-dialog p {
+  font-family: 'Palanquin', latin;
+  font-weight: 700;
+  font-size: 29px;
+  line-height: 120%;
+  color: var(--order-dialog-h1-p-color);
+}

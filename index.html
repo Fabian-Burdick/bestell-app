@@ -87,7 +87,7 @@
           </div>
         </div>
 
-        <div class="basket-wrapper">
+        <div id="closeOpenBasket" class="basket-wrapper">
           <div class="basket">
             <h4>Your Basket</h4>
             <div id="basketDishes" class="basket-dishes">
@@ -100,10 +100,12 @@
         </div>
 
         <dialog class="order-dialog" id="myDialog">
-          <button onclick="closeDialog()">X</button>
+          <div class="dialog-close">
+            <button onclick="closeDialog()">X</button>
+          </div>
           <img src="./assets/icons/foodtaxi.webp" alt="taxi" />
           <div>
-            <h3>Order confirmed!</h3>
+            <h1>Order confirmed!</h1>
             <p>Your food is on the way!</p>
           </div>
         </dialog>

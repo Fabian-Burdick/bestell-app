@@ -23,21 +23,29 @@ function renderDishes(containerId, category) {
 
 function renderMenuButtons() {
   const buttons = document.querySelectorAll('.menuButton');
+  const dishTitles = document.querySelectorAll('.menu-text');
   buttons.forEach((button, index) => {
     const basketDish = basket.find((dish) => dish.name === myDishes[index].name);
+    const currentTitle = dishTitles[index];
     if (basketDish) {
       button.innerHTML = `Added ${basketDish.amount}`;
       button.style.color = 'var(--global-h1-color)';
+      if (currentTitle) {
+        currentTitle.classList.add('moved-right');
+      }
     } else {
       button.innerHTML = 'Add to basket';
       button.style.color = '';
+      if (currentTitle) {
+        currentTitle.classList.remove('moved-right');
+      }
     }
   });
 }
 
 function pushDishesToBasket(index) {
+  document.getElementById('closeOpenBasket').style.display = 'flex';
   const chosenDish = myDishes[index];
-
   const existingDish = basket.find((dish) => dish.name === chosenDish.name);
 
   if (existingDish) {
