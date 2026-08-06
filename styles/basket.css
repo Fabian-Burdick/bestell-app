@@ -19,7 +19,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 59px 0px 0px 0px;
+  padding: 59px 31px 0px 0px;
   gap: 36px;
   z-index: 1;
 }
@@ -28,9 +28,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 85%;
+  width: 90%;
   gap: 10px;
-  max-height: 400px;
+  max-height: 380px;
   overflow-y: auto;
   overflow-x: hidden;
 }
@@ -86,13 +86,14 @@
 .total-content {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 31px;
 }
 
 .price-list {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
   width: 100%;
 }
 
@@ -126,10 +127,54 @@
   display: flex;
   align-items: center;
   flex-direction: column;
+  padding-left: 31px;
   gap: 100px;
+  width: 100%;
 }
 
 .empty-basket-content img {
   width: 128px;
   height: 129px;
+}
+
+@media screen and (min-width: 769px) and (max-width: 1279px) {
+  .basket {
+    width: 343px;
+    height: 662px;
+    border-radius: 30px 30px 0px 0px;
+    padding: 38px 0px 0px 0px;
+    gap: 16px;
+  }
+
+  .basket-menucard {
+    max-width: 300px;
+  }
+  .basket-dishes {
+    width: 320px;
+    gap: 10px;
+    max-height: 320px;
+    justify-content: space-around;
+  }
+
+  .basket-total {
+    width: 300px;
+    align-items: normal;
+  }
+
+  .buy-button {
+    font-size: 1.5rem;
+    width: 233px;
+    height: 53px;
+  }
+
+  .empty-basket-content {
+    padding-left: 0px;
+  }
+
+  .basket-dishes::-webkit-scrollbar {
+    padding-right: 40px;
+    width: 6px;
+    height: 5px;
+    scroll-padding-left: 24px;
+  }
 }
