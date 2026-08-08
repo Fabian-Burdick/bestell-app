@@ -198,7 +198,7 @@ p {
 .order-dialog h1 {
   font-family: 'Palanquin', latin;
   font-weight: 700;
-  font-size: 42px;
+  font-size: 2.625rem;
   line-height: 120%;
   color: var(--order-dialog-h1-p-color);
 }
@@ -206,7 +206,34 @@ p {
 .order-dialog p {
   font-family: 'Palanquin', latin;
   font-weight: 700;
-  font-size: 29px;
+  font-size: 1.813rem;
   line-height: 120%;
   color: var(--order-dialog-h1-p-color);
+}
+@media screen and (max-width: 1039px) {
+  h4 {
+    font-size: 2rem;
+    line-height: 32px;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+    text-align: center;
+  }
+
+  .order-dialog h1 {
+    font-size: 2rem;
+  }
+
+  .order-dialog p {
+    font-size: 1.375rem;
+  }
 }

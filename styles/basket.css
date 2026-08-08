@@ -1,7 +1,7 @@
 .basket-wrapper {
   width: 100%;
   max-width: 1440px;
-  height: 2300px;
+  height: 2400px;
   bottom: 0;
   top: 904px;
   position: absolute;
@@ -137,7 +137,29 @@
   height: 129px;
 }
 
-@media screen and (min-width: 769px) and (max-width: 1279px) {
+/* Das Elternelement (der Link) muss relativ sein */
+.basket-toggle {
+  position: relative;
+  display: inline-block;
+}
+
+/* Styling für den Kreis */
+.basket-count {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: #ff3b30; /* Rote Farbe */
+  color: white;
+  font-size: 11px;
+  font-weight: bold;
+  border-radius: 50%;
+  padding: 2px 6px;
+  min-width: 12px;
+  text-align: center;
+  line-height: 1;
+}
+
+@media screen and (max-width: 1279px) {
   .basket {
     width: 343px;
     height: 662px;
@@ -176,5 +198,22 @@
     width: 6px;
     height: 5px;
     scroll-padding-left: 24px;
+  }
+}
+
+@media screen and (max-width: 1039px) {
+  .basket-wrapper {
+    top: 882px;
+  }
+}
+
+@media screen and (max-width: 694px) {
+  .basket-wrapper {
+    justify-content: center;
+    height: 4000px;
+  }
+
+  .basket.is-empty {
+    display: none !important;
   }
 }
