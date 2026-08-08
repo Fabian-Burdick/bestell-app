@@ -95,3 +95,54 @@ footer nav {
   gap: 72px;
   padding-top: 32px;
 }
+
+footer div {
+  display: flex;
+  gap: 72px;
+}
+
+.mobile-nav {
+  position: sticky;
+  bottom: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  height: 78px;
+  width: 100%;
+  gap: 64px;
+  z-index: 2;
+  background-color: var(--navbar-background-color);
+}
+
+@media screen and (max-width: 694px) {
+  .hero-section {
+    padding-top: 160px;
+  }
+
+  .hero-text-container {
+    flex-direction: column-reverse;
+    align-items: center;
+    padding-top: 110px;
+    gap: 0px;
+  }
+
+  .dehaze {
+    display: none;
+  }
+
+  footer nav {
+    flex-direction: column-reverse;
+    padding-top: 0;
+    gap: 0;
+  }
+
+  footer div {
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+
+  .mobile-nav {
+    display: flex;
+  }
+}

@@ -1,9 +1,7 @@
 function dishesTemplate(dishes, index) {
   return `
     <div class="menu-card">
-      <div>
         <img src="${dishes.image}" alt="${dishes.name}">
-      </div>
       <div class="menu-info">
         <div class="menu-text">
           <h6>${dishes.name}</h6>

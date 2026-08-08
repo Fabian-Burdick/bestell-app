@@ -110,3 +110,19 @@ function deleteDishes(i) {
   renderBasketTotal();
   renderMenuButtons();
 }
+
+document.addEventListener('DOMContentLoaded', function () {
+  const basket = document.querySelector('.basket');
+  if (!basket) return;
+  function updateMobileBasket() {
+    const isEmpty = basket.querySelector('.empty-basket-content') !== null;
+    if (isEmpty) {
+      basket.classList.add('is-empty');
+    } else {
+      basket.classList.remove('is-empty');
+    }
+  }
+  updateMobileBasket();
+  const observer = new MutationObserver(updateMobileBasket);
+  observer.observe(basket, { childList: true, subtree: true });
+});
