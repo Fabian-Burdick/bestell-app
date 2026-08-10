@@ -26,9 +26,11 @@ function basketDishesTemplate(dish, i) {
         <p>${counter} x ${dish.name}</p>
           <div class="basket-menucard-container">
             <div class="basket-menucard-text">
-              <button onclick="minusDish(${i})">
+            <button onclick="minusDishes(${i})">-</button>
+              <button onclick="deleteDishes(${i})">
                 <img src="./assets/icons/bin.webp" alt="bin" />
               </button>
+              <button onclick="plusDishes(${i})">+</button>
             </div>
             <p>${totalItemPrice} €</p>
           </div>

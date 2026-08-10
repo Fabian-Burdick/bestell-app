@@ -94,11 +94,19 @@ function renderBasketTotal() {
   totalContainer.innerHTML = basketTotalTemplate(subtotal, total);
 }
 
-function minusDish(i) {
+function minusDishes(i) {
   if (basket[i].amount > 1) {
     basket[i].amount--;
-  } else {
-    basket.splice(i, 1);
+  }
+  renderBasketDishes();
+  renderBasketTotal();
+  renderMenuButtons();
+  renderMobileBasketButton();
+}
+
+function plusDishes(i) {
+  if (basket[i].amount > 0) {
+    basket[i].amount++;
   }
   renderBasketDishes();
   renderBasketTotal();

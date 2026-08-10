@@ -75,6 +75,13 @@
 
 .basket-menucard-text {
   display: flex;
+  align-items: center;
+}
+
+.basket-menucard button {
+  font-size: 32px;
+  text-align: center;
+  color: var(--global-p-color);
 }
 
 .basket-total {
