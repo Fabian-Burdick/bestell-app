@@ -89,6 +89,7 @@
 
         <div id="closeOpenBasket" class="basket-wrapper">
           <div class="basket">
+            <button onclick="closeMobileBasket()" class="close-basket"><p>X</p></button>
             <h4>Your Basket</h4>
             <div id="basketDishes" class="basket-dishes">
               <!--Basket Dishes rendered here-->
@@ -128,7 +129,7 @@
       <a href=""><img src="./assets/icons/home-default.webp" alt="home" /></a>
       <a><img src="./assets/icons/person-default.webp" alt="person" /></a>
       <a><img src="./assets/icons/favcon.webp" alt="favcon" /></a>
-      <a><img src="./assets/icons/card-default.webp" alt="card" /></a>
+      <a onclick="openMobileBasket()" id="mobileBasketButton"><img src="./assets/icons/card-default.webp" alt="card" /></a>
     </nav>
   </body>
 

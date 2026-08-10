@@ -44,10 +44,11 @@ function renderMenuButtons() {
 }
 
 function pushDishesToBasket(index) {
-  document.getElementById('closeOpenBasket').style.display = 'flex';
+  if (window.innerWidth > 768) {
+    document.getElementById('closeOpenBasket').style.display = 'flex';
+  }
   const chosenDish = myDishes[index];
   const existingDish = basket.find((dish) => dish.name === chosenDish.name);
-
   if (existingDish) {
     existingDish.amount++;
   } else {
@@ -56,10 +57,10 @@ function pushDishesToBasket(index) {
       amount: 1,
     });
   }
-
   renderBasketDishes();
   renderBasketTotal();
   renderMenuButtons();
+  renderMobileBasketButton();
 }
 
 function renderBasketDishes() {
@@ -102,6 +103,7 @@ function minusDish(i) {
   renderBasketDishes();
   renderBasketTotal();
   renderMenuButtons();
+  renderMobileBasketButton();
 }
 
 function deleteDishes(i) {
@@ -109,6 +111,7 @@ function deleteDishes(i) {
   renderBasketDishes();
   renderBasketTotal();
   renderMenuButtons();
+  renderMobileBasketButton();
 }
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -126,3 +129,32 @@ document.addEventListener('DOMContentLoaded', function () {
   const observer = new MutationObserver(updateMobileBasket);
   observer.observe(basket, { childList: true, subtree: true });
 });
+
+function openMobileBasket() {
+  const basket = (document.getElementById('closeOpenBasket').style.display = 'flex');
+}
+
+function closeMobileBasket() {
+  const basket = (document.getElementById('closeOpenBasket').style.display = 'none');
+}
+
+function renderMobileBasketButton() {
+  const mobileButton = document.getElementById('mobileBasketButton');
+  if (!mobileButton) return;
+  let totalCount = 0;
+  for (let i = 0; i < basket.length; i++) {
+    totalCount += basket[i].amount;
+  }
+  if (totalCount > 0) {
+    mobileButton.innerHTML = `
+        <img src="./assets/icons/card-number.webp" alt="basket-dishes">
+        <div class="test">
+        <span class="basket-button-counter">${totalCount}</span>
+        </div>
+    `;
+  } else {
+    mobileButton.innerHTML = `
+      <img src="./assets/icons/card-default.webp" alt="basket-empty">
+    `;
+  }
+}

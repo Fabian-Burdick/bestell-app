@@ -21,10 +21,9 @@ function dishesTemplate(dishes, index) {
 function basketDishesTemplate(dish, i) {
   const counter = dish.amount || 1;
   const totalItemPrice = (dish.price * counter).toFixed(2).replace('.', ',');
-
   return `
-        <div class="basket-menucard">
-            <p>${counter} x ${dish.name}</p>
+      <div class="basket-menucard">
+        <p>${counter} x ${dish.name}</p>
           <div class="basket-menucard-container">
             <div class="basket-menucard-text">
               <button onclick="minusDish(${i})">
@@ -33,7 +32,7 @@ function basketDishesTemplate(dish, i) {
             </div>
             <p>${totalItemPrice} €</p>
           </div>
-        </div>`;
+      </div>`;
 }
 
 function basketTotalTemplate(subtotal, total) {
