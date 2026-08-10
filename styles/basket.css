@@ -146,10 +146,15 @@
   display: none;
 }
 
+.mobile-basket-icon {
+  padding-top: 11px;
+}
+
 .mobile-basket-counter-container {
-  position: absolute;
-  top: 21px;
-  right: 34px;
+  position: relative;
+  top: -37px;
+  right: -16px;
+  margin: 0;
 }
 
 .mobile-basket-button-counter {
