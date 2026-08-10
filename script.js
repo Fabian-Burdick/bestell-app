@@ -148,8 +148,8 @@ function renderMobileBasketButton() {
   if (totalCount > 0) {
     mobileButton.innerHTML = `
         <img src="./assets/icons/card-number.webp" alt="basket-dishes">
-        <div class="test">
-        <span class="basket-button-counter">${totalCount}</span>
+        <div class="mobile-basket-counter-container">
+        <span class="mobile-basket-button-counter">${totalCount}</span>
         </div>
     `;
   } else {

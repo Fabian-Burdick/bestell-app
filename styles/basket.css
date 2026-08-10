@@ -146,13 +146,13 @@
   display: none;
 }
 
-.test {
+.mobile-basket-counter-container {
   position: absolute;
   top: 21px;
-  right: 30px;
+  right: 34px;
 }
 
-.basket-button-counter {
+.mobile-basket-button-counter {
   display: flex;
   justify-content: center;
   font-size: 12px;
