@@ -228,16 +228,14 @@
     display: none;
     justify-content: center;
     align-items: end;
-    height: 4930px;
+    height: 100%;
+    max-height: 100%;
     top: 0px;
+    position: absolute;
   }
 
   .basket {
     bottom: 84px;
-  }
-
-  .basket::backdrop {
-    background-color: rgba(69, 68, 68, 0.4);
   }
 
   .basket.is-empty {
@@ -248,5 +246,11 @@
     display: flex;
     justify-content: end;
     padding-right: 20px;
+  }
+
+  html.modal-open,
+  body.modal-open {
+    overflow: hidden;
+    height: 100%; /* Zwingt den Viewport auf die Bildschirmhöhe */
   }
 }

@@ -142,10 +142,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
 function openMobileBasket() {
   const basket = (document.getElementById('closeOpenBasket').style.display = 'flex');
+  document.documentElement.classList.add('modal-open');
+  document.body.classList.add('modal-open');
 }
 
 function closeMobileBasket() {
   const basket = (document.getElementById('closeOpenBasket').style.display = 'none');
+  document.documentElement.classList.remove('modal-open');
+  document.body.classList.remove('modal-open');
 }
 
 function renderMobileBasketButton() {
