@@ -71,3 +71,32 @@ function emptyBasketTemplate() {
               <img src="./assets/icons/basket.webp" alt="Basket" />
           </div>`;
 }
+
+function moileNavIconTemplate() {
+  return `
+    <div class="mobile-basket-icon">
+        <img src="./assets/icons/card-number.webp" alt="basket-dishes">
+        <div class="mobile-basket-counter-container">
+        <span class="mobile-basket-button-counter">${totalCount}</span>
+        </div>
+      </div>
+    </div>
+    `;
+}
+
+function mobileBasketButtonActiveTemplate(count) {
+  return `
+    <div class="mobile-basket-icon">
+      <img src="./assets/icons/card-number.webp" alt="basket-dishes">
+      <div class="mobile-basket-counter-container">
+        <span class="mobile-basket-button-counter">${count}</span>
+      </div>
+    </div>
+  `;
+}
+
+function mobileBasketButtonEmptyTemplate() {
+  return `
+    <img src="./assets/icons/card-default.webp" alt="basket-empty">
+  `;
+}

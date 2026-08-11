@@ -97,6 +97,8 @@ function renderBasketTotal() {
 function minusDishes(i) {
   if (basket[i].amount > 1) {
     basket[i].amount--;
+  } else {
+    basket.splice(i, 1);
   }
   renderBasketDishes();
   renderBasketTotal();
@@ -149,23 +151,15 @@ function closeMobileBasket() {
 function renderMobileBasketButton() {
   const mobileButton = document.getElementById('mobileBasketButton');
   if (!mobileButton) return;
+
   let totalCount = 0;
   for (let i = 0; i < basket.length; i++) {
     totalCount += basket[i].amount;
   }
+
   if (totalCount > 0) {
-    mobileButton.innerHTML = `
-    <div class="mobile-basket-icon">
-        <img src="./assets/icons/card-number.webp" alt="basket-dishes">
-        <div class="mobile-basket-counter-container">
-        <span class="mobile-basket-button-counter">${totalCount}</span>
-        </div>
-      </div>
-    </div>
-    `;
+    mobileButton.innerHTML = mobileBasketButtonActiveTemplate(totalCount);
   } else {
-    mobileButton.innerHTML = `
-      <img src="./assets/icons/card-default.webp" alt="basket-empty">
-    `;
+    mobileButton.innerHTML = mobileBasketButtonEmptyTemplate();
   }
 }
