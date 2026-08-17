@@ -11,7 +11,7 @@
 html,
 body {
   overflow-x: clip;
-  height: 100dvh;
+  /* height: 100dvh; */
 }
 
 button {

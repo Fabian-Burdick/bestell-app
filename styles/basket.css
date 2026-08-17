@@ -251,6 +251,12 @@
   html.modal-open,
   body.modal-open {
     overflow: hidden;
-    height: 100%; /* Zwingt den Viewport auf die Bildschirmhöhe */
+    height: 100%;
+  }
+}
+
+@media screen and (max-height: 734px) {
+  .basket {
+    scale: calc(80%);
   }
 }

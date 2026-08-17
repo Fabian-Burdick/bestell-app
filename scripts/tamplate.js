@@ -19,22 +19,20 @@ function dishesTemplate(dishes, index) {
 }
 
 function basketDishesTemplate(dish, i) {
-  const counter = dish.amount || 1;
-  const totalItemPrice = (dish.price * counter).toFixed(2).replace('.', ',');
-  return `
-      <div class="basket-menucard">
-        <p>${counter} x ${dish.name}</p>
-          <div class="basket-menucard-container">
-            <div class="basket-menucard-text">
-            <button onclick="minusDishes(${i})">-</button>
-              <button onclick="deleteDishes(${i})">
-                <img src="./assets/icons/bin.webp" alt="bin" />
-              </button>
-              <button onclick="plusDishes(${i})">+</button>
-            </div>
-            <p>${totalItemPrice} €</p>
-          </div>
-      </div>`;
+  return `       
+    <div class="basket-menucard">         
+      <p class="basket-menucard-title">${dish.amount || 1} x ${dish.name}</p>           
+      <div class="basket-menucard-container">             
+        <div class="basket-menucard-actions">             
+          <button class="btn-minus" onclick="minusDishes(${i})" aria-label="Menge verringern">-</button>               
+          <button class="btn-delete" onclick="deleteDishes(${i})" aria-label="Gericht löschen">                 
+            <img src="./assets/icons/bin.webp" alt="Löschen" />               
+          </button>               
+          <button class="btn-plus" onclick="plusDishes(${i})" aria-label="Menge erhöhen">+</button>             
+        </div>             
+        <p class="basket-menucard-price">${(dish.price * (dish.amount || 1)).toFixed(2).replace('.', ',')} €</p>           
+      </div>       
+    </div>`;
 }
 
 function basketTotalTemplate(subtotal, total) {

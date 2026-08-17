@@ -7,7 +7,13 @@ function allDishes() {
   renderDishes('pizzaContainer', 'pizza');
   renderDishes('saladContainer', 'salad');
   renderBasketDishes();
+}
+
+function renderAll() {
+  renderBasketDishes();
   renderBasketTotal();
+  renderMenuButtons();
+  renderMobileBasketButton();
 }
 
 function renderDishes(containerId, category) {
@@ -22,23 +28,15 @@ function renderDishes(containerId, category) {
 }
 
 function renderMenuButtons() {
-  const buttons = document.querySelectorAll('.menuButton');
-  const dishTitles = document.querySelectorAll('.menu-text');
-  buttons.forEach((button, index) => {
+  document.querySelectorAll('.menuButton').forEach((button, index) => {
     const basketDish = basket.find((dish) => dish.name === myDishes[index].name);
-    const currentTitle = dishTitles[index];
-    if (basketDish) {
-      button.innerHTML = `Added ${basketDish.amount}`;
-      button.style.color = 'var(--global-h1-color)';
-      if (currentTitle) {
-        currentTitle.classList.add('moved-right');
-      }
-    } else {
-      button.innerHTML = 'Add to basket';
-      button.style.color = '';
-      if (currentTitle) {
-        currentTitle.classList.remove('moved-right');
-      }
+    const currentTitle = document.querySelectorAll('.menu-text')[index];
+
+    button.innerHTML = basketDish ? `Added ${basketDish.amount}` : 'Add to basket';
+    button.style.color = basketDish ? 'var(--global-h1-color)' : '';
+
+    if (currentTitle) {
+      currentTitle.classList.toggle('moved-right', !!basketDish);
     }
   });
 }
@@ -57,10 +55,7 @@ function pushDishesToBasket(index) {
       amount: 1,
     });
   }
-  renderBasketDishes();
-  renderBasketTotal();
-  renderMenuButtons();
-  renderMobileBasketButton();
+  renderAll();
 }
 
 function renderBasketDishes() {
@@ -100,28 +95,19 @@ function minusDishes(i) {
   } else {
     basket.splice(i, 1);
   }
-  renderBasketDishes();
-  renderBasketTotal();
-  renderMenuButtons();
-  renderMobileBasketButton();
+  renderAll();
 }
 
 function plusDishes(i) {
   if (basket[i].amount > 0) {
     basket[i].amount++;
   }
-  renderBasketDishes();
-  renderBasketTotal();
-  renderMenuButtons();
-  renderMobileBasketButton();
+  renderAll();
 }
 
 function deleteDishes(i) {
   basket.splice(i, 1);
-  renderBasketDishes();
-  renderBasketTotal();
-  renderMenuButtons();
-  renderMobileBasketButton();
+  renderAll();
 }
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -155,15 +141,26 @@ function closeMobileBasket() {
 function renderMobileBasketButton() {
   const mobileButton = document.getElementById('mobileBasketButton');
   if (!mobileButton) return;
-
   let totalCount = 0;
   for (let i = 0; i < basket.length; i++) {
     totalCount += basket[i].amount;
   }
-
   if (totalCount > 0) {
     mobileButton.innerHTML = mobileBasketButtonActiveTemplate(totalCount);
   } else {
     mobileButton.innerHTML = mobileBasketButtonEmptyTemplate();
   }
+}
+
+const dialog = document.getElementById('myDialog');
+
+function openDialog() {
+  dialog.showModal();
+  document.getElementById('closeOpenBasket').style.display = 'none';
+  basket = [];
+  renderMenuButtons();
+}
+
+function closeDialog() {
+  dialog.close();
 }
