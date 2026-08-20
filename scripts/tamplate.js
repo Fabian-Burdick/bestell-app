@@ -70,7 +70,7 @@ function emptyBasketTemplate() {
           </div>`;
 }
 
-function moileNavIconTemplate() {
+function mobileNavIconTemplate() {
   return `
     <div class="mobile-basket-icon">
         <img src="./assets/icons/card-number.webp" alt="basket-dishes">

@@ -257,6 +257,7 @@
 
 @media screen and (max-height: 734px) {
   .basket {
-    scale: calc(80%);
+    width: 100dvh;
+    z-index: 3;
   }
 }
